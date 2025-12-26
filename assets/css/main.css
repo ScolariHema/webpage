@@ -1749,7 +1749,13 @@
 	.inner {
 		max-width: 75em;
 		margin: 0 auto;
-	
+	 
+	}
+
+	.inneraccess {
+		max-width: 75em;
+		margin: 0 auto;
+	    text-align: center;
 	}
 
 	.imageinner {
@@ -2966,8 +2972,8 @@
 			padding: 0;
 		}
 
-		#banner p {
-			font-size: 1em;
+		#banner h3 {
+			font-size: 1.3 em;
 			color: rgba(255, 255, 255, 0.55);
 			margin-bottom: 1.75em;
 		}
