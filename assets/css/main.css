@@ -1749,7 +1749,12 @@
 	.inner {
 		max-width: 75em;
 		margin: 0 auto;
-	 
+	}
+
+	.instagram {
+		justify-content: center;
+        margin-left: 12em;
+		margin-right: 12em;
 	}
 
 	.inneraccess {
