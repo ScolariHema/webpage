@@ -85,29 +85,20 @@
 			</div>
 		</form>
 		<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxB9X_HObj8pvS7sQgQmAcLb013Fm8_NNyYNDnj6IK9x7K4hk4f/exec'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyZdvw1nLdp_baCYfSGodDWfB5zJXo4TUPdBVM-M-B5sb2dMnxUPuCQ_Se8PAiQzkPAzw/exec'
   const form = document.forms['contactForm']
 
   form.addEventListener('submit', e => {
     e.preventDefault()
 
-    const formData = new FormData(form)
-    const data = {}
-
-    formData.forEach((value, key) => {
-      data[key] = value
-    })
-
     fetch(scriptURL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: new FormData(form) // 👈 CLAVE
     })
-    .then(res => res.json())
     .then(() => {
       location.href = "thankyou.html"
     })
-    .catch(err => console.error('Error!', err.message))
+    .catch(err => console.error('Error!', err))
   })
 </script>
 
