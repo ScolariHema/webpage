@@ -1785,6 +1785,12 @@
 				max-width: 90%;
 			}
 
+			.instagram {
+
+        margin-left: 6em;
+		margin-right: 6em;
+	}
+
 		}
 
 		@media screen and (max-width: 480px) {
@@ -1792,6 +1798,12 @@
 			.inner {
 				max-width: 85%;
 			}
+
+			.instagram {
+		justify-content: center;
+        margin-left: 2em;
+		margin-right: 2em;
+	}
 
 		}
 
