@@ -29,12 +29,11 @@
 						<h2>Scolari Esgrima Histórica</h2>
 						<p>Sobre Nosotros</p>
 					</header>
-					<p> La escuela nace desde el entusiasmo de la correcta practica y estudio de los tratados antiguos. Fundada por Daniel Bassi y Juan Pedro Fisanotti.</p>
-					<p>Somos estudiantes de las artes marciales, coleccionistas y entusiastas de la historia y, siendo esta la primera agrupación de este tipo tanto en Córdoba como Rafaela, buscamos potenciar significativamente la visibilidad de esta disciplina en ambas ciudades para una aceleración de la formación del cuerpo de alumnos que asistan. 
+					<p> La escuela nace desde el entusiasmo de la correcta practica y estudio de los tratados antiguos. Fundada por <strong>Daniel Bassi y Valeria Ibañez</strong>.</p>
+					<p>Somos estudiantes de las artes marciales, coleccionistas y entusiastas de la historia y, siendo esta la primera agrupación de este tipo en Córdoba, buscamos potenciar significativamente la visibilidad de esta disciplina en ambas sedes para una aceleración de la formación del cuerpo de alumnos que asistan. 
 						Organizamos encuentros y workshops a nivel internacional buscando el intercambio de conocimientos y experiencias entre las demas escuelas de Latam.</p> 
 						<p>La esgrima histórica no sólo es interesante por su carácter cultural e histórico, sino que su práctica a nivel deportivo ofrece varios beneficios cómo Físicos (agilidad, fuerza), de coordinación, Mentales (pensamiento analítico, agilidad mental) y Sociales (empatía, superación grupal, comunidad).</p>
-						<p>Desde la psicología del deporte y motivación, Valeria Ibañez brinda su colaboración al equipo de práctica de Córdoba, y desde el aspecto organizacional coordina las relaciones públicas de la sede cordobesa.
-						</p>
+						
 					<div class="flex flex-2">
 						<article>
 							<div class="image fit">
@@ -44,7 +43,7 @@
 						</article>
 						<article>
 							<div class="image fit">
-								<img src="images/felifisa.jpg" alt="Pic 08" />
+								<img src="images/danyval1.jpg" alt="Pic 08" />
 							</div>
 							
 						</article>
@@ -69,7 +68,7 @@
 				
 				<div class="6u$ 12u$(small)">
 					<input type="checkbox" id="human" name="human" checked>
-					<label for="human">Soy mayor de 18 años</label>
+					<label for="human">Soy mayor de 21 años</label>
 				</div>
 				<!-- Break -->
 				<div class="12u$">
@@ -86,21 +85,32 @@
 			</div>
 		</form>
 		<script>
-			const scriptURL = 'https://script.google.com/macros/s/AKfycbxB9X_HObj8pvS7sQgQmAcLb013Fm8_NNyYNDnj6IK9x7K4hk4f/exec'
-			const form = document.forms['contactForm']
-			console.log(form)
-		
-			form.addEventListener('submit', e => {
-				e.preventDefault()
-				fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => {
-					location.href ="thankyou.html"
-					//$('#resetForm')[0].reset();
-					//alert('recibimos tus datos!')
-				})
-				.catch(error => console.error('Error!', error.message))
-			})
-		</script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxB9X_HObj8pvS7sQgQmAcLb013Fm8_NNyYNDnj6IK9x7K4hk4f/exec'
+  const form = document.forms['contactForm']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+
+    const formData = new FormData(form)
+    const data = {}
+
+    formData.forEach((value, key) => {
+      data[key] = value
+    })
+
+    fetch(scriptURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(() => {
+      location.href = "thankyou.html"
+    })
+    .catch(err => console.error('Error!', err.message))
+  })
+</script>
+
 	</div>
 </div>
 </section>
@@ -114,7 +124,7 @@
 				<div class="inner">
 					<div class="flex">
 						<div class="copyright">
-							&copy; First Page Responsive: <a href="https://github.com/Valtory">Valtory</a>
+							&copy; Scolari Esgrima Historica - Todos los derechos reservados
 						</div>
 						<ul class="icons">
 							<li><a href="https://www.facebook.com/scolariesgrimahistorica" class="icon fa-facebook"><span class="label">Facebook</span></a></li>

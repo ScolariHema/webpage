@@ -2192,7 +2192,8 @@
 
 		.box.person {
 			border: solid 1px rgba(255, 255, 255, 0.25);
-			padding: 3em 1.5em;
+			padding: 2em 1.5em;
+			
 		}
 
 			.box.person h3 {
@@ -2200,11 +2201,12 @@
 			}
 
 			.box.person .image {
-				margin-bottom: 1em;
+				margin-bottom: 0.5em;
+				justify-items: center;
 			}
 
 				.box.person .image img {
-					max-width: 100%;
+					max-width: 70%;
 				}
 
 /* Icon */
@@ -2270,6 +2272,7 @@
 			display: block;
 			margin: 0 0 2em 0;
 			width: 100%;
+		
 		}
 
 			.image.fit img {
