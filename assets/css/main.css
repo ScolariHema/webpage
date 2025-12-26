@@ -1749,6 +1749,23 @@
 	.inner {
 		max-width: 75em;
 		margin: 0 auto;
+	
+	}
+
+	.imageinner {
+        display: flex;
+        justify-content: center;
+	}
+
+	.imageinner img{
+		justify-items: center;
+	}
+
+	.inner h2{
+		text-align: center;
+	}
+	.inner p{
+		text-align: center;
 	}
 
 		@media screen and (max-width: 1280px) {
